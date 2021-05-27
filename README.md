@@ -1,70 +1,30 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Arvolution Ping Pong Scorekeeper
 
-## Available Scripts
+## Getting Setup
+1. Download or clone the repo and navigate to the repo's root directory.
+2. Run `npm install` to install all dependencies.
+3. Run `npm run start` to start the dev server.
+4. Navigate to `http://localhost:3000`.
 
-In the project directory, you can run:
+## Implementation
+The ping pong scorekeeper uses `localStorage` to keep track of score and to persist the data on reload. If the app was any more complicated, I probably would have used a state management tool like Redux, or leveraged `useContext` for more complex pieces of state. For the scope of this project, using `localStorage` was sufficient and quick to get up and running.
 
-### `yarn start`
+To reset your game session, open navigate to the "Local Storage" section in the "Applications" tab of your Developer Console. Click on `http://localhost:3000` to access your local storage and delete the local storage key `PING_PONG_GAME_SESSION`.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+For Google Chrome: https://developer.chrome.com/docs/devtools/storage/localstorage/
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+For Firefox: https://developer.mozilla.org/en-US/docs/Tools/Storage_Inspector
 
-### `yarn test`
+## Creative Liberty
+The wireframes gave a basic layout to how the scorekeeper project should have been laid out.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+I did take some creative liberty with adding Arvolution's logo, and tried to emulate some of Arvolution's basic brand that I deduced from the logo.
 
-### `yarn build`
+## Improvements
+If I had more time, there's a couple areas of improvements I would like to make, including the following:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Refactor the frontend component architecture to be more repeatable. An example would be the `button` components that have the same style. A shared `<Button />` that is reusable would be my first move.
+2. Autosave on "Add win" button clicks.
+3. Adding a modal that pops up when you land on the root directory and prompts you to continue a session if there's an existing session stored in local storage.
+4. More comprehensive tests.
