@@ -1,4 +1,4 @@
-const DEFAULT_EXPIRY = 600000; // 1 minute
+const DEFAULT_EXPIRY = 3000000; // 5 minutes
 
 export const setLocalStorageWithExpiry = (key, value, ttl = DEFAULT_EXPIRY) => {
   const now = new Date();

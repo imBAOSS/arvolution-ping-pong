@@ -18,7 +18,9 @@ function App() {
           src="assets/img/arvolution-text-logo.png"
           alt="arvolution text logo"
         />
-        <h2 className="game-container__header">Ping Pong Scorekeeper</h2>
+        <h2 className="game-container__header">
+          Ping Pong Scorekeeper
+        </h2>
         {
           gameSession !== null
           ? <Scoreboard />
