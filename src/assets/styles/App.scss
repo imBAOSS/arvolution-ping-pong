@@ -1,0 +1,39 @@
+@import './variables/_typography.scss';
+@import './variables/_colors.scss';
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  box-sizing: border-box;
+  width: 35%;
+
+  border: 1px solid $border-grey;
+  border-radius: 5px;
+  box-shadow: 0 5px 20px $border-grey;
+
+  overflow: hidden;
+
+  &__img {
+    margin-bottom: 10px;
+    width: 75%;
+  }
+
+  &__header {
+    margin: 0 0 20px;
+
+    font-family: $montserrat;
+    font-weight: 400;
+    font-size: 1.25rem;
+  }
+}

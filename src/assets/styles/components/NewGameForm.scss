@@ -1,0 +1,41 @@
+@import '../variables/_colors.scss';
+@import '../variables/_typography.scss';
+@import '../shared/mixins.scss';
+
+.new-game-form {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+
+  font-family: $montserrat;
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    margin-bottom: 40px;
+
+    input {
+      height: 30px;
+      width: 100%;
+      box-sizing: border-box;
+
+      border: none;
+      border-bottom: 1px solid $black;
+
+      font-size: 1rem;
+      font-weight: 700;
+      color: $accent-green;
+
+      &::placeholder {
+        font-weight: 100;
+      }
+    }
+  }
+
+  &__btn {
+    @include primary-btn;
+  }
+}

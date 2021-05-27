@@ -1,0 +1,35 @@
+@import '../variables/colors.scss';
+@import '../shared/mixins.scss';
+
+.individual-score {
+  margin-bottom: 20px;
+  position: relative;
+  
+  &__header, &__subheader {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    margin-bottom: 5px;
+
+    .flex-2 {
+      flex: 2;
+    }
+
+    .flex-1 {
+      flex: 1;
+    }
+  }
+
+  &__btn {
+    @include primary-btn;
+    width: unset;
+    align-self: flex-end;
+
+    font-size: 0.9rem;
+  }
+
+  &__score {
+    font-size: 3rem;
+  }
+}

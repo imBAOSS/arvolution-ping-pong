@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import NewGameForm from './js/components/NewGameForm';
+import Scoreboard from './js/components/Scoreboard';
+
+import { GAME_SESSION_TOKEN } from './js/utils/constants';
+import { getLocalStorageWithExpiry } from './js/utils/localStorageUtils';
+
+import './assets/styles/App.scss';
 
 function App() {
+  const [gameSession, setGameSession] = useState(getLocalStorageWithExpiry(GAME_SESSION_TOKEN));
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className="game-container">
+        <img
+          className="game-container__img"
+          src="assets/img/arvolution-text-logo.png"
+          alt="arvolution text logo"
+        />
+        <h2 className="game-container__header">Ping Pong Scorekeeper</h2>
+        {
+          gameSession !== null
+          ? <Scoreboard />
+          : <NewGameForm setGameSession={setGameSession} />
+        }
+      </div>
     </div>
   );
 }
